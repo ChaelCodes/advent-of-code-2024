@@ -1,6 +1,8 @@
 class Day00
   attr_accessor :records, :part
 
+  PARSE_REGEX = /.*/
+
   def initialize(part: 1)
     self.records = inputs
     self.part = part
@@ -11,11 +13,19 @@ class Day00
     File.readlines("./inputs/day_#{day_match[:number]}.txt", chomp: true)
   end
 
+  def parse_records
+    records.each do |record|
+      self.records = PARSE_REGEX.match(record)
+    end
+  end
+
   def solve_part_1
+    parse_records
     records.count
   end
 
   def solve_part_2
+    parse_records
     records.count
   end
 
