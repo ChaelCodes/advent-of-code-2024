@@ -10,7 +10,6 @@ RSpec.describe Day00 do
     end
   end
 
-
   describe "#parse_records" do
     subject { solution.parse_records }
 
