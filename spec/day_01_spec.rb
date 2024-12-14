@@ -1,11 +1,13 @@
 RSpec.describe Day01 do
   let(:solution) { described_class.new }
 
-  xdescribe "#inputs" do
+  describe "#inputs" do
     subject { solution.inputs }
 
-    it { expect(subject.first).to eq "77710   11556" }
-    it { expect(subject.count).to eq 1000 }
+    context "with input file", :with_input_file do
+      it { expect(subject.first).to eq "77710   11556" }
+      it { expect(subject.count).to eq 1000 }
+    end
   end
 
   describe "#parse_records" do
@@ -26,7 +28,9 @@ RSpec.describe Day01 do
     subject { solution.solve }
 
     context "for part 1" do
-      xit { is_expected.to eq 1197984 }
+      context "with input file", :with_input_file do
+        it { is_expected.to eq 1197984 }
+      end
 
       context "example problem" do
         before do
@@ -40,7 +44,9 @@ RSpec.describe Day01 do
     context "for part 2" do
       let(:solution) { described_class.new(part: 2) }
 
-      xit { is_expected.to eq 23387399 }
+      context "with input file", :with_input_file do
+        it { is_expected.to eq 23387399 }
+      end
 
       context "example problem" do
         before do

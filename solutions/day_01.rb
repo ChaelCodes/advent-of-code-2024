@@ -10,7 +10,11 @@ class Day01
 
   def inputs
     day_match = self.class.name.match(/Day(?<number>\d+)/)
-    File.readlines("./inputs/day_#{day_match[:number]}.txt", chomp: true)
+    begin
+      File.readlines("./inputs/day_#{day_match[:number]}.txt", chomp: true)
+    rescue Errno::ENOENT
+      return []
+    end
   end
 
   def parse_records

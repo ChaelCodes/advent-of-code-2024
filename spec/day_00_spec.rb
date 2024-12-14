@@ -4,8 +4,10 @@ RSpec.describe Day00 do
   describe "#inputs" do
     subject { solution.inputs }
 
-    xit { expect(subject.first).to eq "" }
-    it { expect(subject.count).to eq 0 }
+    context "with input file", :with_input_file do
+      xit { expect(subject.first).to eq "" }
+      it { expect(subject.count).to eq 0 }
+    end
   end
 
 
@@ -26,13 +28,17 @@ RSpec.describe Day00 do
     subject { solution.solve }
 
     context "for part 1" do
-      it { is_expected.to eq 0 }
+      context "with input file", :with_input_file do
+        it { is_expected.to eq 0 }
+      end
     end
 
     xcontext "for part 2" do
       let(:solution) { described_class.new(part: 2) }
 
-      it { is_expected.to eq 0 }
+      context "with input file", :with_input_file do
+        it { is_expected.to eq 0 }
+      end
     end
   end
 end
