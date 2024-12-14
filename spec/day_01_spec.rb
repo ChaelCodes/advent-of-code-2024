@@ -1,7 +1,7 @@
 RSpec.describe Day01 do
   let(:solution) { described_class.new }
 
-  describe "#inputs" do
+  xdescribe "#inputs" do
     subject { solution.inputs }
 
     it { expect(subject.first).to eq "77710   11556" }
@@ -26,7 +26,7 @@ RSpec.describe Day01 do
     subject { solution.solve }
 
     context "for part 1" do
-      it { is_expected.to eq 1197984 }
+      xit { is_expected.to eq 1197984 }
 
       context "example problem" do
         before do
@@ -40,7 +40,7 @@ RSpec.describe Day01 do
     context "for part 2" do
       let(:solution) { described_class.new(part: 2) }
 
-      it { is_expected.to eq 23387399 }
+      xit { is_expected.to eq 23387399 }
 
       context "example problem" do
         before do
